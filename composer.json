@@ -1,5 +1,5 @@
 {
-  "name": "ByINTI/ame-merchant-sdk",
+  "name": "byinti/ame-merchant-sdk",
   "description": "SDK para comunicação com a API AME Merchant.",
   "type": "library",
   "config": {
