@@ -56,14 +56,17 @@ abstract class BaseRequest
 
     /**
      * @return mixed
-     * @throws AmeMerchantSdkException
      */
     public function execute()
     {
         try {
             $response = $this->client->send(
                 $this->makeRequest(),
-                ['debug' => $this->debug]
+                [
+                    'debug'           => $this->debug,
+                    'timeout'         => 5.0,
+                    'connect_timeout' => 5.0,
+                ]
             );
 
             $responseArray = json_decode(
@@ -80,7 +83,7 @@ abstract class BaseRequest
 
                 throw new AmeMerchantHttpException(
                     $errorResponseArr['error'] ?? 'Fatal Error',
-                    $errorResponseArr['error_description'] ?? 'An unexpected error ocurred.',
+                    $errorResponseArr['error_description'] ?? $e->getMessage(),
                     $errorResponse->getStatusCode() ?? 500,
                     $e->getPrevious()
                 );
@@ -88,7 +91,7 @@ abstract class BaseRequest
 
             throw new AmeMerchantSdkException(
                 'Fatal Error',
-                'An unexpected error ocurred.',
+                $e->getMessage(),
                 500,
                 $e->getPrevious()
             );
