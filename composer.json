@@ -3,14 +3,10 @@
   "version": "v1.1.0",
   "description": "SDK para comunicação com a API AME Merchant.",
   "type": "library",
-  "config": {
-    "platform": {
-      "php": "7.3"
-    }
-  },
   "require": {
+    "php": ">=7.3",
     "ext-json": "*",
-    "guzzlehttp/guzzle": "~6.0"
+    "guzzlehttp/guzzle": "~7.5"
   },
   "license": "MIT",
   "authors": [
