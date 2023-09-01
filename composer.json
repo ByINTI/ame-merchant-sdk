@@ -1,6 +1,6 @@
 {
   "name": "byinti/ame-merchant-sdk",
-  "version": "v1.1.0",
+  "version": "v2.0.0",
   "description": "SDK para comunicação com a API AME Merchant.",
   "type": "library",
   "require": {
